@@ -1,11 +1,54 @@
+* {
+  background: #333;
+  color: white;
+}
+
+body {
+  width: 100%;
+  font-family: 'Titillium Web', sans-serif;
+  background: #333;
+  color: white;
+}
+
+.container {
+  background: #333;
+  color: white;
+}
+
 .form-check-label {
   font-size: 18px;
   padding-left: 22%;
   padding-right: 22%;
   padding-top: 5%;
-
 }
 
 .col-md-3 {
   margin: 2%;
+  margin-left: 6%;
+}
+
+h1 {
+  align-items: center;
+  font-stretch: extra-expanded;
+}
+
+h2 {
+  align-items: center;
+}
+
+.centercol {
+  align-items: center;
+
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 100%;
+}
+
+@media only screen and (max-width: 640px) {
+  .col-md-3 {
+    width: 100%;
+    align-items: center;
+  }
 }
