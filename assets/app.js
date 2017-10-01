@@ -82,6 +82,7 @@ function runCamera() {
     console.log("Sup, bro");
       Webcam.snap(function(data_uri) {
         $('#my_result').html('<img src="' + data_uri + '">');
+        console.log(data_uri);
       });
   }, 3000);
 }
