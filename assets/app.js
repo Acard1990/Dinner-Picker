@@ -13,9 +13,14 @@ var config = {
 firebase.initializeApp(config);
 
 var db = firebase.database();
+var consRef = db.ref("/connections");
+var conInfo = db.ref(".info/connected");
+
 //Geo-location
 //-----------------------------------------------------------------------------------------------------------------------------
 //
+var lat;
+var lon;
 var getPosition = function (options) {
   return new Promise(function (resolve, reject) {
     navigator.geolocation.getCurrentPosition(resolve, reject, options);
@@ -25,22 +30,18 @@ var getPosition = function (options) {
 getPosition()
   .then((position) => {
     console.log(position);
-    db.ref().push({
-      lat: position.coords.latitude,
-      lon: position.coords.longitude
-    });
+    lat = position.coords.latitude;
+    lon = position.coords.longitude;
   })
   .catch((err) => {
     console.error(err.message);
   });
 
-
-
 //Retrieve and store checked values
 //-----------------------------------------------------------------------------------------------------------------------------
 //
 var genres = [];
-
+var restaurants = [];
 $('input[type="submit"]').on('click', function(event) {
   event.preventDefault();
 
@@ -49,26 +50,38 @@ $('input[type="submit"]').on('click', function(event) {
   });
 
   for (var i = 0; i < genres.length; i++) {
-    var genreName = genres[i];
     var url = "https://maps.googleapis.com/maps/api/place/textsearch/json";
-    var api = "AIzaSyDDGNN9FZN-yWZway_-vTNSspIcaizUjyc";
+    var api = "AIzaSyCrSZtxM-JFlEyqajAam7VuztNLoXi3DPc";
     var q = genres[i];
     url += '?' + $.param({
       'key': api,
-      'query': q + '+Restaurant'
+      'query': q + '+Restaurant',
+      'location': lat + ',' + lon
     });
-
 
     $.ajax({
       url: url,
       method: 'GET'
     }).done(function(response) {
-      $.each(response.results, function(j){
-        console.log(response.results[j].name);
-        db.ref().child(genreName).push({
-          name: response.results[j].name
-        });
-      });
+      for (var j = 0; j < 3; j++) {
+        restaurants.push(response.results[j].name);
+      }
     });
   }
+  $('#form').empty();
+  runCamera();
 });
+
+//
+//-----------------------------------------------------------------------------------------------------------------------------
+//
+
+function runCamera() {
+  Webcam.attach('#my_camera');
+  setTimeout(function() {
+    console.log("Sup, bro");
+      Webcam.snap(function(data_uri) {
+        $('#my_result').html('<img src="' + data_uri + '">');
+      });
+  }, 3000);
+}
