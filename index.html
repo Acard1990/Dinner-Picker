@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <title>Dinner Picker</title>
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/css/style.css">
   <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
 </head>
 
@@ -93,10 +93,28 @@
     </div>
   </div>
 
-    <script src="https://www.gstatic.com/firebasejs/4.4.0/firebase.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="assets/app.js"></script>
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDDGNN9FZN-yWZway_-vTNSspIcaizUjyc&libraries=places"></script>
+
+
+
+  <div id="app-area">
+    <div id="camera_area">
+      <div id="my_camera" style="width:320px; height:240px;"></div>
+      <div id="my_result">
+        <img id="base64image">
+      </div>
+    </div>
+    <div>
+        <h1 id="restaurants"></h1>
+    </div>
+  </div>
+  <div id="result"></div>
+
+
+  <script src="https://www.gstatic.com/firebasejs/4.4.0/firebase.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="assets/javascript/webcam.js"></script>
+  <script src="assets/javascript/base64-binary.js"></script>
+  <script src="assets/javascript/app.js"></script>
 </body>
 
 </html>
