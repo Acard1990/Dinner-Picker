@@ -3,9 +3,8 @@
 <head>
   <meta charset="utf-8">
   <title>Dinner Picker</title>
-  <link rel="stylesheet" href="assets/bootstrap.min.css">
-  <link rel="stylesheet" href="assets/reset.css">
-  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
   <div id="form">
@@ -18,14 +17,18 @@
       <input type="submit" value="Submit">
     </form>
   </div>
-
-  <div id="camera_area">
-    <div id="my_camera" style="width:320px; height:240px;"></div>
-    <div id="my_result">
-      <img id="base64image">
+  <div id="app-area">
+    <div id="camera_area">
+      <div id="my_camera" style="width:320px; height:240px;"></div>
+      <div id="my_result">
+        <img id="base64image">
+      </div>
+    </div>
+    <div>
+        <h1 id="restaurants"></h1>
     </div>
   </div>
-  <div class="container" id="Saved">
+  <!-- <div class="container" id="Saved">
     <div id="chart" class="chart">
       <p>Anger: <span id="anger"></span></p>
       <p>Contempt: <span id="contempt"></span></p>
@@ -37,14 +40,12 @@
       <p>Surprise: <span id="surprise"></span></p>
     </div>
     <div class="footer"><b>Task: </b><span id="loading"></span></div>
-  </div>
-  
+  </div> -->
+
   <script src="https://www.gstatic.com/firebasejs/4.4.0/firebase.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://pixlcore.com/demos/webcamjs/webcam.min.js"></script>
-  <script src="assets/base64-binary.js"></script>
-  <script src="assets/app.js"></script>
-  <script src="assets/app2.js"></script>
-
+  <script src="assets/javascript/webcam.js"></script>
+  <script src="assets/javascript/base64-binary.js"></script>
+  <script src="assets/javascript/app.js"></script>
 </body>
 </html>
