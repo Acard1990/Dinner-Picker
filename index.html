@@ -18,16 +18,33 @@
       <input type="submit" value="Submit">
     </form>
   </div>
+
+  <div id="camera_area">
+    <div id="my_camera" style="width:320px; height:240px;"></div>
+    <div id="my_result">
+      <img id="base64image">
+    </div>
+  </div>
+  <div class="container" id="Saved">
+    <div id="chart" class="chart">
+      <p>Anger: <span id="anger"></span></p>
+      <p>Contempt: <span id="contempt"></span></p>
+      <p>Disgust: <span id="disgust"></span></p>
+      <p>Fear: <span id="fear"></span></p>
+      <p>Happiness: <span id="happiness"></span></p>
+      <p>Neutral: <span id="neutral"></span></p>
+      <p>Sadness: <span id="sadness"></span></p>
+      <p>Surprise: <span id="surprise"></span></p>
+    </div>
+    <div class="footer"><b>Task: </b><span id="loading"></span></div>
+  </div>
+  
   <script src="https://www.gstatic.com/firebasejs/4.4.0/firebase.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://pixlcore.com/demos/webcamjs/webcam.min.js"></script>
+  <script src="assets/base64-binary.js"></script>
   <script src="assets/app.js"></script>
   <script src="assets/app2.js"></script>
-  <div id="camera_area">
-    <div id="my_camera" style="width:320px; height:240px;"></div>
-    <div id="my_result"></div>
-  </div>
 
-  </div>
 </body>
 </html>

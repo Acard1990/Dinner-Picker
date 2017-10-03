@@ -79,10 +79,39 @@ $('input[type="submit"]').on('click', function(event) {
 function runCamera() {
   Webcam.attach('#my_camera');
   setTimeout(function() {
-    console.log("Sup, bro");
       Webcam.snap(function(data_uri) {
-        $('#my_result').html('<img src="' + data_uri + '">');
-        console.log(data_uri);
+        $('#base64image').attr("src", data_uri);
+        SaveSnap();
       });
   }, 3000);
 }
+
+function SaveSnap() {
+  var file = document.getElementById("base64image").src.substring(23).replace(' ', '+');
+  var img = Base64Binary.decodeArrayBuffer(file);
+  var ajax = new XMLHttpRequest();
+  ajax.addEventListener("load", function(event) {
+    uploadcomplete(event);
+  }, false);
+  ajax.open("POST", "https://westus.api.cognitive.microsoft.com/emotion/v1.0/recognize?", "image/jpg");
+  ajax.setRequestHeader("Content-Type", "application/octet-stream");
+  //ajax.setRequestHeader("Accept-Encoding","gzip, deflate");
+  ajax.setRequestHeader("Accept", "text/html,application/xhtml+xml,application/xml");
+  ajax.setRequestHeader("Ocp-Apim-Subscription-Key", "a56af77ea8264c04bfa6d55cae572d61");
+  ajax.send(img);
+}
+
+function uploadcomplete(event) {
+  document.getElementById("loading").innerHTML = "Compleated";
+  var xmlDoc = event.target.responseXML;
+  var list = xmlDoc.getElementsByTagName("scores");
+  document.getElementById("anger").innerHTML = list[0].childNodes[0].textContent;
+  document.getElementById("contempt").innerHTML = list[0].childNodes[1].textContent;
+  document.getElementById("disgust").innerHTML = list[0].childNodes[2].textContent;
+  document.getElementById("fear").innerHTML = list[0].childNodes[3].textContent;
+  document.getElementById("happiness").innerHTML = list[0].childNodes[4].textContent;
+  document.getElementById("neutral").innerHTML = list[0].childNodes[5].textContent;
+  document.getElementById("sadness").innerHTML = list[0].childNodes[6].textContent;
+  document.getElementById("surprise").innerHTML = list[0].childNodes[7].textContent;
+}
+//window.onload = ShowCam;
