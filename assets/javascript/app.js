@@ -15,6 +15,10 @@ var lon;
 var genres = [];
 //empty array to hold responses from Google api
 var restaurants = [];
+// empty array to hold happiness scores
+var hapArr = [];
+// undefined var to hold the restaurant to go to
+var theChosen;
 
 // Block to only allow three checked boxes
 //-----------------------------------------------------------------------------------------------------------------------------
@@ -132,9 +136,25 @@ function runCamera() {
 
 //function to stop the camera and present user with the restaurant they should eat at
 function end() {
+  var maxIndex = 0;
   Webcam.reset();
-  $('#app-area').html('<h1>THE END</h1>');
+  $('#app-area').empty();
   //algorithm here...
+  function indexOfMax(hapArr) {
+    if (arr.length === 0) {
+        return -1;
+    }
+    var max = hapArr[0];
+    for (var i = 1; i < arr.length; i++) {
+        if (hapArr[i] > max) {
+            maxIndex = i;
+            max = hapArr[i];
+        }
+    }
+    return maxIndex;
+}
+  theChosen = restaurants[maxIndex];
+  $('#result').html(theChosen);
 }
 
 //Code below is open-source and credited to this Github repo: https://github.com/vlasov01/emotion
@@ -161,6 +181,8 @@ function uploadcomplete(event) {
   console.log(event.target.responseXML);
   var list = xmlDoc.getElementsByTagName("scores");
   console.log(list[0].childNodes[4].textContent);
+  hapArr.push(list[0].childNodes[4].textContent);
+  console.log(hapArr);
   checkCount();
   // document.getElementById("anger").innerHTML = list[0].childNodes[0].textContent;
   // document.getElementById("contempt").innerHTML = list[0].childNodes[1].textContent;
