@@ -13,12 +13,12 @@ body {
   width: 100%;
   font-family: 'Titillium Web', sans-serif;
   color: white;
-  align-items: bseline;
   background: rgba(0, 0, 0, 0.0);
 }
 
 .container {
   color: white;
+  width: 100%;
   background: rgba(0, 0, 0, 0.0);
 }
 
@@ -48,7 +48,7 @@ h2 {
 
 .btn-primary {
   box-shadow: 3px 3px black;
-
+  text-shadow: 2px 2px black;
 }
 
 @media (min-width: 1200px) {
