@@ -56,11 +56,48 @@ h2 {
     margin-left: 43%;
     background: rgba(0, 0, 0, 0.0);
   }
+  #camera_area {
+    width: 100%;
+    align-items: center;
+  }
+  #my_camera {
+    align-items: center;
+    margin-left: 30%;
+    margin-right: auto;
+    background: rgba(0, 0, 0, 0.0);
+  }
+  #go {
+    margin-left: 68%;
+  }
+  video {
+    align-items: center;
+    margin-left: 25%;
+    background: rgba(0, 0, 0, 0.0);
+  }
 }
 
 @media only screen and (max-width: 640px) {
   .center {
     margin-left: 41%;
     background: rgba(0, 0, 0, 0.0);
+  }
+  #camera_area {
+    width: 100%;
+    align-items: center;
+  }
+  #my_camera {
+    align-items: center;
+    margin-left: 5%;
+    margin-right: auto;
+    background: rgba(0, 0, 0, 0.0);
+  }
+  video {
+    align-items: center;
+    margin-left: 15%;
+    background: rgba(0, 0, 0, 0.0);
+  }
+  #go {
+    align-items: center;
+    margin-left: 58%;
   }
 }
