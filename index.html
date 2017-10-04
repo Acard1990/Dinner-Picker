@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
   <title>Dinner Picker</title>
@@ -10,111 +11,56 @@
 
 <body>
   <div class="container">
-    <header class="text-center">
+    <div id="first-content-wrapper">
+      <header class="text-center">
 
-      <h1>Dinner Picker</h1>
-      <iframe src="https://giphy.com/embed/E87jjnSCANThe" width="480" height="204" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
-      <h2>Pick 3 food Genres to continue.</h2>
-      <button type="button" class="btn btn-primary">Submit your choices</button>
+        <h1>Dinner Picker</h1>
+        <!--<iframe src="https://giphy.com/embed/E87jjnSCANThe" width="480" height="204" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>-->
+        <h2>Pick 3 food Genres to continue.</h2>
+        <button type="button" id="submit" class="btn btn-primary">Submit your choices</button>
 
-    </header>
-    <div class="centercol">
-      <div class="col-md-3">
-        <label class="form-check-label text-center">
-      <input type="checkbox" class="form-check-input">
-      Vegan
-    </label>
-        <label class="form-check-label text-center">
-      <input type="checkbox" class="form-check-input">
-      Thai
-    </label>
-        <label class="form-check-label text-center">
-      <input type="checkbox" class="form-check-input">
-      Tex-Mex
-    </label>
-        <label class="form-check-label text-center">
-      <input type="checkbox" class="form-check-input">
-      Japanese
-    </label>
-        <label class="form-check-label text-center">
-      <input type="checkbox" class="form-check-input">
-      Steakhouse
-    </label>
-
+      </header>
+        <form action="">
+          <!-- <div class="col-md-3"> -->
+              <input type="checkbox" class="form-check-input" value="Vegan">Vegan<br>
+              <input type="checkbox" class="form-check-input" value="Thai">Thai<br>
+              <input type="checkbox" class="form-check-input" value="Tex-Mex">Tex-Mex<br>
+              <input type="checkbox" class="form-check-input" value="Japanese">Japanese<br>
+              <input type="checkbox" class="form-check-input" value="Steakhouse">Steakhouse<br>
+          <!-- </div>
+          <div class="col-md-3"> -->
+              <input type="checkbox" class="form-check-input" value="Southern">Southern<br>
+              <input type="checkbox" class="form-check-input" value="Seafood">Seafood<br>
+              <input type="checkbox" class="form-check-input" value="Pizza">Pizza<br>
+              <input type="checkbox" class="form-check-input" value="Mexican">Mexican<br>
+              <input type="checkbox" class="form-check-input" value="Italian">Italian<br>
+          <!-- </div>
+          <div class="col-md-3"> -->
+              <input type="checkbox" class="form-check-input" value="Greek">Greek<br>
+              <input type="checkbox" class="form-check-input" value="Cuban">Cuban<br>
+              <input type="checkbox" class="form-check-input" value="Chinese">Chinese<br>
+              <input type="checkbox" class="form-check-input" value="Barbeque">Barbeque<br>
+              <input type="checkbox" class="form-check-input" value="American">American<br>
+          <!-- </div> -->
+        </form>
       </div>
 
-      <div class="col-md-3">
-        <label class="form-check-label text-center">
-      <input type="checkbox" class="form-check-input">
-      Southern
-    </label>
-        <label class="form-check-label text-center">
-      <input type="checkbox" class="form-check-input">
-      Seafood
-    </label>
-        <label class="form-check-label text-center">
-      <input type="checkbox" class="form-check-input">
-      Pizza
-    </label>
-        <label class="form-check-label text-center">
-      <input type="checkbox" class="form-check-input">
-      Mexican
-    </label>
-        <label class="form-check-label text-center">
-      <input type="checkbox" class="form-check-input">
-      Italian
-    </label>
-
+      <div id="app-area">
+        <div id="camera_area">
+          <div id="my_camera" style="width:320px; height:240px;"></div>
+          <div id="my_result">
+            <img id="base64image">
+          </div>
+        </div>
+        <div>
+          <h1 id="restaurants"></h1>
+        </div>
       </div>
-
-      <div class="col-md-3">
-        <label class="form-check-label text-center">
-      <input type="checkbox" class="form-check-input">
-      Greek
-    </label>
-        <label class="form-check-label text-center">
-      <input type="checkbox" class="form-check-input">
-      Cuban
-    </label>
-        <label class="form-check-label text-center">
-      <input type="checkbox" class="form-check-input">
-      Chinese
-    </label>
-        <label class="form-check-label text-center">
-      <input type="checkbox" class="form-check-input">
-      Barbeque
-    </label>
-        <label class="form-check-label text-center">
-      <input type="checkbox" class="form-check-input">
-      American
-    </label>
-
-      </div>
-    </div>
-  </div>
-
-
-
-
-  <div id="app-area">
-    <div id="camera_area">
-      <div id="my_camera" style="width:320px; height:240px;"></div>
-      <div id="my_result">
-        <img id="base64image">
-      </div>
-    </div>
-    <div>
-        <h1 id="restaurants"></h1>
-    </div>
-  </div>
-  <div id="result"></div>
-
-
-  <script src="https://www.gstatic.com/firebasejs/4.4.0/firebase.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="assets/javascript/webcam.js"></script>
-  <script src="assets/javascript/base64-binary.js"></script>
-  <script src="assets/javascript/app.js"></script>
+      <div id="result"></div>
+      <script src="https://www.gstatic.com/firebasejs/4.4.0/firebase.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src="assets/javascript/webcam.js"></script>
+      <script src="assets/javascript/base64-binary.js"></script>
+      <script src="assets/javascript/app.js"></script>
 </body>
-
 </html>
