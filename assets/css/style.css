@@ -1,55 +1,103 @@
-
 * {
-  background: #333;
   color: white;
+  background: #2c3e50;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #3498db, #2c3e50);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #3498db, #2c3e50);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  text-shadow: 3px 3px black;
 }
 
 body {
   width: 100%;
   font-family: 'Titillium Web', sans-serif;
-  background: #333;
   color: white;
+  background: rgba(0, 0, 0, 0.0);
 }
 
 .container {
-  background: #333;
   color: white;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.0);
 }
 
-.form-check-label {
-  font-size: 18px;
-  padding-left: 22%;
-  padding-right: 22%;
-  padding-top: 5%;
-}
-
-.col-md-3 {
-  margin: 2%;
-  margin-left: 6%;
+.center {
+  align-items: center;
+  width: 100%;
+  margin-left: 45%;
+  padding: 2%;
+  font-size: 22px;
+  background: rgba(0, 0, 0, 0.0);
 }
 
 h1 {
   align-items: center;
   font-stretch: extra-expanded;
+  background: rgba(0, 0, 0, 0.0);
+  font-family: 'Bree Serif', serif;
+  font-size: 45px;
+  text-shadow: 3px 3px black;
 }
 
 h2 {
   align-items: center;
+  background: rgba(0, 0, 0, 0.0);
+  text-shadow: 3px 3px black;
 }
 
-.centercol {
-  align-items: center;
-
+.btn-primary {
+  box-shadow: 3px 3px black;
+  text-shadow: 2px 2px black;
 }
 
 @media (min-width: 1200px) {
-  .container {
+  .center {
+    margin-left: 43%;
+    background: rgba(0, 0, 0, 0.0);
+  }
+  #camera_area {
     width: 100%;
+    align-items: center;
+  }
+  #my_camera {
+    align-items: center;
+    margin-left: 30%;
+    margin-right: auto;
+    background: rgba(0, 0, 0, 0.0);
+  }
+  #go {
+    margin-left: 68%;
+  }
+  video {
+    align-items: center;
+    margin-left: 25%;
+    background: rgba(0, 0, 0, 0.0);
+  }
 }
 
 @media only screen and (max-width: 640px) {
-  .col-md-3 {
+  .center {
+    margin-left: 41%;
+    background: rgba(0, 0, 0, 0.0);
+  }
+  #camera_area {
     width: 100%;
     align-items: center;
+  }
+  #my_camera {
+    align-items: center;
+    margin-left: 5%;
+    margin-right: auto;
+    background: rgba(0, 0, 0, 0.0);
+  }
+  video {
+    align-items: center;
+    margin-left: 15%;
+    background: rgba(0, 0, 0, 0.0);
+  }
+  #go {
+    align-items: center;
+    margin-left: 58%;
   }
 }
