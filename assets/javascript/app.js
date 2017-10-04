@@ -105,6 +105,7 @@
     var btn = $('<button id="go">');
     btn.html("Start");
     $('#my_camera').append(btn);
+    console.log(restaurants);
   });
 
   //App logic block
@@ -125,34 +126,20 @@
   //function to call webcam.js snap picture function inside a setTimeout method
   function runCamera() {
     $('#restaurants').html(restaurants[count]);
+    count++;
     looper = setTimeout(function() {
       Webcam.snap(function(data_uri) {
         $('#base64image').attr("src", data_uri);
         saveSnap();
-        count++;
       });
     }, 3000);
   }
 
   //function to stop the camera and present user with the restaurant they should eat at
   function end() {
-    var maxIndex = 0;
     Webcam.reset();
     $('#app-area').empty();
-    //algorithm here...
-    function indexOfMax(hapArr) {
-      if (arr.length === 0) {
-          return -1;
-      }
-      var max = hapArr[0];
-      for (var i = 1; i < arr.length; i++) {
-          if (hapArr[i] > max) {
-              maxIndex = i;
-              max = hapArr[i];
-          }
-      }
-      return maxIndex;
-  }
+    var maxIndex = hapArr.indexOf(Math.max.apply(null, hapArr));
     theChosen = restaurants[maxIndex];
     $('#result').html(theChosen);
   }
@@ -178,10 +165,12 @@
 
   function uploadcomplete(event) {
     var xmlDoc = event.target.responseXML;
-    console.log(event.target.responseXML);
     var list = xmlDoc.getElementsByTagName("scores");
     console.log(list[0].childNodes[4].textContent);
-    hapArr.push(list[0].childNodes[4].textContent);
+    var hapScore = Number(list[0].childNodes[4].textContent);
+    hapScore.toFixed(20);
+    console.log(hapScore);
+    hapArr.push(hapScore);
     console.log(hapArr);
     checkCount();
     // document.getElementById("anger").innerHTML = list[0].childNodes[0].textContent;
