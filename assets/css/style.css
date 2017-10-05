@@ -41,6 +41,9 @@ h2 {
   box-shadow: 3px 3px black;
   text-shadow: 2px 2px black;
 }
+button {
+  text-shadow: none;
+}
 
 @media (min-width: 1200px) {
   .center {
