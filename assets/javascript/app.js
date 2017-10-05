@@ -19,6 +19,7 @@
   var hapArr = [];
   // undefined var to hold the restaurant to go to
   var theChosen;
+  var data;
 
   // Block to only allow three checked boxes
   //-----------------------------------------------------------------------------------------------------------------------------
@@ -80,7 +81,7 @@
     //for loop to call the Google API for each food genre selected by the user
     for (var i = 0; i < genres.length; i++) {
       var url = "https://maps.googleapis.com/maps/api/place/textsearch/json";
-      var api = "AIzaSyDDGNN9FZN-yWZway_-vTNSspIcaizUjyc";
+      var api = "AIzaSyCrSZtxM-JFlEyqajAam7VuztNLoXi3DPc";
       var q = genres[i];
       url += '?' + $.param({
         'key': api,
@@ -129,7 +130,8 @@
     count++;
     looper = setTimeout(function() {
       Webcam.snap(function(data_uri) {
-        $('#base64image').attr("src", data_uri);
+        //$('#base64image').attr("src", data_uri);
+        data = data_uri;
         saveSnap();
       });
     }, 3000);
@@ -149,7 +151,8 @@
   //
   function saveSnap() {
     clearTimeout(looper);
-    var file = document.getElementById("base64image").src.substring(23).replace(' ', '+');
+    //var file = document.getElementById("base64image").src.substring(23).replace(' ', '+');
+    var file = data.substring(23).replace(' ', '+');
     var img = Base64Binary.decodeArrayBuffer(file);
     var ajax = new XMLHttpRequest();
     ajax.addEventListener("load", function(event) {
