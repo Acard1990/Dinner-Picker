@@ -45,6 +45,15 @@ button {
   text-shadow: none;
 }
 
+#result {
+  align-items: center;
+  font-stretch: extra-expanded;
+  background: rgba(0, 0, 0, 0.0);
+  font-family: 'Bree Serif', serif;
+  font-size: 45px;
+  text-shadow: 3px 3px black;
+}
+
 @media (min-width: 1200px) {
   .center {
     background: rgba(0, 0, 0, 0.0);
