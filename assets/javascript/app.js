@@ -86,7 +86,7 @@
 
   //Retrieve and store checked values
   //-----------------------------------------------------------------------------------------------------------------------------
-  //
+  $("#hidethingy").hide();
   //Event handler for when the user clicks the submit button
   $('#submit').on('click', function(event) {
     event.preventDefault();
@@ -117,6 +117,7 @@
     }
     //remove the checkboxes
     $('#first-content-wrapper').empty();
+    $("#hidethingy").show();
     //launch the webcam
     $('#my_camera').css({"width":"320px", "height":"240px"});
     Webcam.attach('#my_camera');
