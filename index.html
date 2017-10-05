@@ -21,47 +21,83 @@
         <button type="button" id="submit" class="btn btn-primary">Submit your choices</button>
 
       </header>
-        <form action="" class="center">
-          <!-- <div class="col-md-3"> -->
-              <input type="checkbox" class="form-check-input" value="Vegan">Vegan<br>
-              <input type="checkbox" class="form-check-input" value="Thai">Thai<br>
-              <input type="checkbox" class="form-check-input" value="Tex-Mex">Tex-Mex<br>
-              <input type="checkbox" class="form-check-input" value="Japanese">Japanese<br>
-              <input type="checkbox" class="form-check-input" value="Steakhouse">Steakhouse<br>
-          <!-- </div>
-          <div class="col-md-3"> -->
-              <input type="checkbox" class="form-check-input" value="Southern">Southern<br>
-              <input type="checkbox" class="form-check-input" value="Seafood">Seafood<br>
-              <input type="checkbox" class="form-check-input" value="Pizza">Pizza<br>
-              <input type="checkbox" class="form-check-input" value="Mexican">Mexican<br>
-              <input type="checkbox" class="form-check-input" value="Italian">Italian<br>
-          <!-- </div>
-          <div class="col-md-3"> -->
-              <input type="checkbox" class="form-check-input" value="Greek">Greek<br>
-              <input type="checkbox" class="form-check-input" value="Cuban">Cuban<br>
-              <input type="checkbox" class="form-check-input" value="Chinese">Chinese<br>
-              <input type="checkbox" class="form-check-input" value="Barbeque">Barbeque<br>
-              <input type="checkbox" class="form-check-input" value="American">American<br>
-          <!-- </div> -->
-        </form>
-      </div>
-
-      <div id="app-area">
-        <div id="camera_area">
-          <div id="my_camera" style="width:320px; height:240px;"></div>
-          <div id="my_result">
-            <img id="base64image">
+      <div class="center">
+        <div class="row">
+          <div class="col-xs-4">
+            <input type="checkbox" class="form-check-input" value="Vegan">Vegan
+          </div>
+          <div class="col-xs-4">
+            <input type="checkbox" class="form-check-input" value="Thai">Thai
+          </div>
+          <div class="col-xs-4">
+            <input type="checkbox" class="form-check-input" value="Tex-Mex">Tex-Mex
           </div>
         </div>
-        <div>
-          <h1 id="restaurants"></h1>
+        <div class="row">
+          <div class="col-xs-4">
+            <input type="checkbox" class="form-check-input" value="Japanese">Japanese
+          </div>
+          <div class="col-xs-4">
+            <input type="checkbox" class="form-check-input" value="Steakhouse">Steakhouse
+          </div>
+          <div class="col-xs-4">
+            <input type="checkbox" class="form-check-input" value="Southern">Southern
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-4">
+            <input type="checkbox" class="form-check-input" value="Seafood">Seafood
+          </div>
+          <div class="col-xs-4">
+            <input type="checkbox" class="form-check-input" value="Pizza">Pizza
+          </div>
+          <div class="col-xs-4">
+            <input type="checkbox" class="form-check-input" value="Mexican">Mexican
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-4">
+            <input type="checkbox" class="form-check-input" value="Italian">Italian
+          </div>
+          <div class="col-xs-4">
+            <input type="checkbox" class="form-check-input" value="Greek">Greek
+          </div>
+          <div class="col-xs-4">
+            <input type="checkbox" class="form-check-input" value="Cuban">Cuban
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-4">
+            <input type="checkbox" class="form-check-input" value="Chinese">Chinese
+          </div>
+          <div class="col-xs-4">
+            <input type="checkbox" class="form-check-input" value="Barbeque">Barbeque
+          </div>
+          <div class="col-xs-4">
+            <input type="checkbox" class="form-check-input" value="American">American
+          </div>
         </div>
       </div>
-      <div id="result"></div>
-      <script src="https://www.gstatic.com/firebasejs/4.4.0/firebase.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-      <script src="assets/javascript/webcam.js"></script>
-      <script src="assets/javascript/base64-binary.js"></script>
-      <script src="assets/javascript/app.js"></script>
+    </div>
+
+    <div id="app-area">
+      <div id="camera_area">
+        <div id="my_camera"></div>
+        <div id="my_result">
+          <img id="base64image">
+        </div>
+      </div>
+      <div>
+        <h1 id="restaurants"></h1>
+      </div>
+    </div>
+    <div id="result"></div>
+  </div>
+  <script src="https://www.gstatic.com/firebasejs/4.4.0/firebase.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="assets/javascript/webcam.js"></script>
+  <script src="assets/javascript/base64-binary.js"></script>
+  <script src="assets/javascript/app.js"></script>
 </body>
+
 </html>
